@@ -6,21 +6,27 @@
   "scripts": {
     "serve": "http-server -o -c 1 -a localhost",
     "bundle": "watchify -vd -p browserify ./src/main.ts -p [ tsify ] -o ./dist/bundle.js",
-    "start": "npm-run-all --parallel bundle serve"
+    "start": "npm-run-all --parallel bundle serve",
+    "test": "ts-mocha --recursive tests/*.tests.ts"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/chai": "^4.1.4",
     "@types/lodash": "^4.14.82",
+    "@types/mocha": "^5.2.4",
     "browserify": "^14.5.0",
+    "chai": "^4.1.2",
     "http-server": "^0.10.0",
     "npm-run-all": "^4.1.2",
+    "ts-mocha": "^1.2.0",
     "tsify": "^3.0.3",
     "typescript": "^2.6.1",
     "watchify": "^3.9.0"
   },
   "dependencies": {
     "lodash": "^4.17.4",
+    "mocha": "^5.2.0",
     "p5": "^0.5.16"
   }
 }
